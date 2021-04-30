@@ -1,4 +1,4 @@
-package com.persons.persons;
+package com.persons.persons.controller;
 
 import com.persons.persons.model.Person;
 import com.persons.persons.service.PersonService;
@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value= "/persons")
-public class Controller {
+public class PersonController {
 
     @Autowired
     private PersonService personService;
