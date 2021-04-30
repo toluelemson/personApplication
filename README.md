@@ -1,19 +1,41 @@
-# springboot-person-Application
+# Spring-boot Person Application
 
-[![Build Status](https://travis-ci.org/codecentric/springboot-sample-app.svg?branch=master)](https://travis-ci.org/codecentric/springboot-sample-app)
-[![Coverage Status](https://coveralls.io/repos/github/codecentric/springboot-sample-app/badge.svg?branch=master)](https://coveralls.io/github/codecentric/springboot-sample-app?branch=master)
-[![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
+Minimal [Spring Boot](http://projects.spring.io/spring-boot/) application. This app adds, edit, delete and search for persons 
+in the database
 
-Minimal [Spring Boot](http://projects.spring.io/spring-boot/) person application.
-
-## Requirements
+## [Requirements]
 
 For building and running the application you need:
 
 - [JDK 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
-- [Maven 3](https://maven.apache.org)
+- [Maven 3.6.3](https://maven.apache.org)
+- [Postgres 13](https://www.postgresql.org/)
 
-## Running the application locally
+## [Technology stack]
+* Spring Boot 2;
+* PostgreSQL database;
+* Swagger;
+
+
+## [ Database Configuration]
+````
+server.port = 8888
+spring.main.banner-mode=off
+logging.level.org.springframework=ERROR
+
+spring.jpa.hibernate.ddl-auto=none
+server.servlet.context-path=/
+
+spring.datasource.initialization-mode=always
+spring.datasource.platform=postgres
+spring.datasource.url=jdbc:postgresql://localhost:5432/persons
+spring.datasource.username=postgres
+spring.datasource.password=postgres
+
+spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true
+ ````
+
+## [Running the application locally]
 
 You can use the [Spring Boot Maven plugin](https://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins-maven-plugin.html) like so:
 
@@ -26,7 +48,11 @@ Build the project using:
 ```shell
 mvn clean install
 ```
-You can test the API with Swagger here:
+
+## [The view in the Swagger]
 http://localhost:8888/swagger-ui/
 
-The web application is accessible via localhost:8888/persons
+## [The view in the Postman] 
+http://localhost:8888/persons
+
+This app runs on 8888 port.
