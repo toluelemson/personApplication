@@ -24,7 +24,7 @@ public class Controller {
     }
 
     @PostMapping()
-    public Person addPerson(@RequestBody Person person) {
+    public List<Person> addPerson(@RequestBody Person person) {
         return personService.addPerson(person);
     }
 

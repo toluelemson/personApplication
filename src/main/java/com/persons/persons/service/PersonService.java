@@ -25,8 +25,10 @@ public class PersonService implements IpersonService {
         return persons;
     }
 
-    public Person addPerson(Person person){
-        return personrepository.save(person);
+    public List<Person> addPerson(Person person){
+        personrepository.save(person);
+        var persons = (List<Person>) personrepository.findAll();
+        return persons;
     }
 
     public String deletePerson(Long personId) {
