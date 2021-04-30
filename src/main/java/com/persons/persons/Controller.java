@@ -24,8 +24,8 @@ public class Controller {
     }
 
     @PostMapping()
-    public Person registerNewPerson(@RequestBody Person person) {
-        return personService.addNewPerson(person);
+    public Person addPerson(@RequestBody Person person) {
+        return personService.addPerson(person);
     }
 
     @DeleteMapping(path = "{personId}")
