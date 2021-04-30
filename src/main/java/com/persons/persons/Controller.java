@@ -29,14 +29,14 @@ public class Controller {
     }
 
     @DeleteMapping(path = "{personId}")
-    public void deletePerson(@PathVariable("personId") Long personId){
-         personService.deletePerson(personId);
+    public String deletePerson(@PathVariable("personId") Long personId){
+         return personService.deletePerson(personId);
     }
 
     @PutMapping(path = "{personId}")
-    public void updatePerson(
+    public String updatePerson(
             @PathVariable("personId") Long personId,
             @RequestParam(required = false) String name) {
-        personService.updatePerson(personId, name);
+        return personService.updatePerson(personId, name);
     }
 }

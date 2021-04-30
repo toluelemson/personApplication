@@ -3,8 +3,6 @@ import com.persons.persons.model.Person;
 import com.persons.persons.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.transaction.Transactional;
 import java.util.List;
@@ -31,17 +29,17 @@ public class PersonService implements IpersonService {
         return personrepository.save(person);
     }
 
-    public void deletePerson(Long personId) {
+    public String deletePerson(Long personId) {
         boolean exists = personrepository.existsById(personId);
         if (!exists) {
             throw new IllegalStateException(
                     "person with id" + personId + " does not exists");
         }
-       personrepository.deleteById(personId);
+       return "person with id " + personId + " has been deleted";
     }
 
     @Transactional
-    public void updatePerson(Long personId, String name) {
+    public String updatePerson(Long personId, String name) {
 
         Person person = personrepository.findById(personId)
                 .orElseThrow(() -> new IllegalStateException(
@@ -50,5 +48,6 @@ public class PersonService implements IpersonService {
         if (name != null && name.length() > 0 && !Objects.equals(person.getName(), name)) {
             person.setName(name);
         }
+        return name + " has been updated";
     }
 }

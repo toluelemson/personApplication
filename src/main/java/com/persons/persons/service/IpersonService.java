@@ -7,6 +7,6 @@ import java.util.List;
 public interface IpersonService {
     List<Person> getPersons();
     Person addPerson(Person person);
-    void updatePerson(Long id, String name);
-    void deletePerson(Long id);
+    String updatePerson(Long id, String name);
+    String deletePerson(Long id);
 }
