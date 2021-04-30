@@ -17,19 +17,17 @@ public class PersonService implements IpersonService {
     private PersonRepository personrepository;
 
 
-    public List<Person> getPersons() {
+	public List<Person> getPersons() {
         var persons = (List<Person>) personrepository.findAll();
         return persons;
     }
 
-    @GetMapping
     public List<Person> findByName(String search) {
         var persons = (List<Person>) personrepository.findByName(search);
         return persons;
     }
 
-    @PostMapping
-    public Person addNewPerson(Person person){
+    public Person addPerson(Person person){
         return personrepository.save(person);
     }
 
@@ -42,7 +40,6 @@ public class PersonService implements IpersonService {
        personrepository.deleteById(personId);
     }
 
-
     @Transactional
     public void updatePerson(Long personId, String name) {
 
@@ -53,6 +50,5 @@ public class PersonService implements IpersonService {
         if (name != null && name.length() > 0 && !Objects.equals(person.getName(), name)) {
             person.setName(name);
         }
-
     }
 }
