@@ -27,6 +27,6 @@ Build the project using:
 mvn clean install
 ```
 You can test the API with Swagger here:
-http://localhost:8888/swagger-ui/#/spring-boot-swagger-controller
+http://localhost:8888/swagger-ui/
 
 The web application is accessible via localhost:8888/persons
