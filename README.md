@@ -4,7 +4,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/codecentric/springboot-sample-app/badge.svg?branch=master)](https://coveralls.io/github/codecentric/springboot-sample-app?branch=master)
 [![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
-Minimal [Spring Boot](http://projects.spring.io/spring-boot/) sample app.
+Minimal [Spring Boot](http://projects.spring.io/spring-boot/) person application.
 
 ## Requirements
 
@@ -26,5 +26,7 @@ Build the project using:
 ```shell
 mvn clean install
 ```
+You can test the API with Swagger here:
+http://localhost:8888/swagger-ui/#/spring-boot-swagger-controller
 
-The web application is accessible via localhost:8888
+The web application is accessible via localhost:8888/persons
