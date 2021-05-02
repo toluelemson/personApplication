@@ -7,7 +7,7 @@ in the database
 
 For building and running the application you need:
 
-- [JDK 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+- [JDK 16.0.1](https://download.oracle.com/otn-pub/java/jdk/16.0.1+9/7147401fd7354114ac51ef3e1328291f/jdk-16.0.1_windows-x64_bin.exe)
 - [Maven 3.6.3](https://maven.apache.org)
 - [Postgres 13](https://www.postgresql.org/)
 
@@ -16,17 +16,16 @@ For building and running the application you need:
 * PostgreSQL database;
 * Swagger;
 
-
 ## [ Database Configuration]
 ````
 server.port = 8888
 spring.main.banner-mode=off
 logging.level.org.springframework=ERROR
 
-spring.jpa.hibernate.ddl-auto=none
+spring.jpa.hibernate.ddl-auto=create
 server.servlet.context-path=/
+spring.jpa.show-sql=true
 
-spring.datasource.initialization-mode=always
 spring.datasource.platform=postgres
 spring.datasource.url=jdbc:postgresql://localhost:5432/persons
 spring.datasource.username=postgres
@@ -43,10 +42,13 @@ You can use the [Spring Boot Maven plugin](https://docs.spring.io/spring-boot/do
 mvn spring-boot:run
 ```
 
-Build the project using:
+Or build runnable jar-packaged: 
 
 ```shell
 mvn clean install
+```
+``` shell
+java -jar persons-0.0.1-SNAPSHOT.jar
 ```
 
 ## [The view in the Swagger]
