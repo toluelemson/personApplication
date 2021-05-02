@@ -36,7 +36,7 @@ public class PersonController {
     @PutMapping(path = "{personId}")
     public String updatePerson(
             @PathVariable("personId") Long personId,
-            @RequestParam(required = false) String name) {
-        return personService.updatePerson(personId, name);
+            @RequestParam(required = false) String person) {
+        return personService.updatePerson(personId, person);
     }
 }

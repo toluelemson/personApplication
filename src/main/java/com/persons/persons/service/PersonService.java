@@ -47,8 +47,8 @@ public class PersonService implements IpersonService {
                 .orElseThrow(() -> new IllegalStateException(
                         "person with id" + personId + "does not exists"
                 ));
-        if (name != null && name.length() > 0 && !Objects.equals(person.getName(), name)) {
-            person.setName(name);
+        if (name != null && name.length() > 0 && !Objects.equals(person.getPerson(), name)) {
+            person.setPerson(name);
         }
         return name + " has been updated";
     }

@@ -16,27 +16,33 @@ public class Person {
             strategy = GenerationType.SEQUENCE,
             generator = "persons_id_seq"
     )
-    @Column(name="id")
+    @Column(name = "id", updatable = false)
     private Long id;
 
-    @Column(name="person")
+    @Column(name="person",
+            columnDefinition = "TEXT")
     private String person;
 
-    public Person() {
-
+    public Person() { }
+    public Person(String person) {
+        this.person = person;
     }
 
-    public Person(String name) {
-        this.person = name;
+    public Person(Long id, String person) {
+        this.id= id;
+        this.person = person;
     }
 
+    public Long getId() {
+        return id;
+    }
 
-    public String getName() {
+    public String getPerson() {
         return person;
     }
 
-    public void setName(String firstName) {
-        this.person = firstName;
+    public void setPerson(String person) {
+        this.person = person;
     }
 
     @Override
