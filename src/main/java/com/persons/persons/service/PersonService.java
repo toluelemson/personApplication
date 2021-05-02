@@ -37,7 +37,8 @@ public class PersonService implements IpersonService {
             throw new IllegalStateException(
                     "person with id" + personId + " does not exists");
         }
-       return "person with id " + personId + " has been deleted";
+        personrepository.deleteById(personId);
+        return "person with id " + personId + " has been deleted";
     }
 
     @Transactional
