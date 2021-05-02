@@ -42,7 +42,7 @@ You can use the [Spring Boot Maven plugin](https://docs.spring.io/spring-boot/do
 mvn spring-boot:run
 ```
 
-Build runnable jar-packaged: 
+Or build runnable jar-packaged: 
 
 ```shell
 mvn clean install
