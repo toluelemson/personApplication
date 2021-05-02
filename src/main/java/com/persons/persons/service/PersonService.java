@@ -21,7 +21,7 @@ public class PersonService implements IpersonService {
     }
 
     public List<Person> findByName(String search) {
-        var persons = (List<Person>) personrepository.findByName(search);
+        var persons = (List<Person>) personrepository.findByNameIgnoreCaseIn(search);
         return persons;
     }
 

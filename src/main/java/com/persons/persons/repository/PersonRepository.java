@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 public interface PersonRepository extends JpaRepository<Person, Long> {
 
-    @Query(value = "select * from persons p where p.person like %:search%", nativeQuery = true)
-    List<Person> findByName(@Param("search") String search);
+    @Query(value = "select * from persons p where lower(p.person) like lower(concat('%', :search, '%'))", nativeQuery = true)
+    List<Person> findByNameIgnoreCaseIn(@Param("search") String search);
 
 }
