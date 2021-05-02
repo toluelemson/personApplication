@@ -55,6 +55,6 @@ java -jar persons-0.0.1-SNAPSHOT.jar
 http://localhost:8888/swagger-ui/
 
 ## [The view in the Postman] 
-http://localhost:8888/persons
+http://localhost:8888/person
 
 This app runs on 8888 port.
